@@ -1,5 +1,7 @@
 package com.employeewage;
 
+import java.util.Scanner;
+
 class Employee
 {
 
@@ -68,10 +70,26 @@ public class Employeewage
 {
         public static void main (String[] args)
         {
+            Scanner sc =new Scanner(System.in);
+            System.out.println("\nenter the employee to check attendance and wage:");
+            System.out.println("\n  Enter\n  1 for FullTime Employee\n  2 for PartTime Employee");
+            int choice=sc.nextInt();
+
             Fulltimeemployee fe =new Fulltimeemployee();
-            fe.employee();
             Parttimeemployee pe=new Parttimeemployee();
-            pe.employee();
+
+            switch (choice)
+            {
+                case 1:
+                {
+                    fe.employee();
+                }
+                break;
+                case 2:
+                {
+                    pe.employee();
+                }break;
+            }
         }
 }
 
