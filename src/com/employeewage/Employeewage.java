@@ -5,6 +5,8 @@ import java.util.Scanner;
 class Employee
 {
 
+    int checkfullmonth =(int) (Math.floor(Math.random() * 100 % 101) + 1);
+    int checkpartmonth =(int) (Math.floor(Math.random() * 50 % 51) + 1);
     int checkfullhours = (int) (Math.floor(Math.random() * 8 % 9) + 1);
     int checkparthours = (int) (Math.floor(Math.random() * 4 % 5) + 1);
     public static int WAGE_PER_HOUR = 20,FULL_DAY_HOUR = 8,PART_TIME_HOUR=4,MONTHLY_FULLTIME_HOUR=100,MONTHLY_PARTTIME_HOUR=50;
@@ -40,11 +42,14 @@ class Employee
 
     }
 
-    public void monthlywage(int hours)
+    public void monthlywage(int hours,int calculatehours)
     {
         System.out.println("\n\ncheck the employee monthly wage:");
         int monthlysalary=hours*WAGE_PER_HOUR;
         System.out.println("\n  Employee's monthly salary is "+monthlysalary);
+        System.out.println("\n\ncheck the monthly wage with presence of hours:");
+        int monthlywage=WAGE_PER_HOUR*calculatehours;
+        System.out.println("\n  The monthly wage of employee is "+monthlywage+", employee worked for "+calculatehours+" hours");
     }
 
 
@@ -58,7 +63,7 @@ class Fulltimeemployee extends Employee
         System.out.println("\n\n   For Fulltime Employee");
         this.employeePresentorAbesnt();
         this.dailyemployeewage(checkfullhours,FULL_DAY_HOUR);
-        this.monthlywage(MONTHLY_FULLTIME_HOUR);
+        this.monthlywage(MONTHLY_FULLTIME_HOUR,checkfullmonth);
     }
 
 }
@@ -71,7 +76,7 @@ class Parttimeemployee extends Employee
         System.out.println("\n\n   For Parttime Employee");
         this.employeePresentorAbesnt();
         this.dailyemployeewage(checkparthours,PART_TIME_HOUR);
-        this.monthlywage(MONTHLY_PARTTIME_HOUR);
+        this.monthlywage(MONTHLY_PARTTIME_HOUR,checkpartmonth);
     }
 
 }
