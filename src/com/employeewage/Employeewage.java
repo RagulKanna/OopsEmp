@@ -87,6 +87,7 @@ public class Employeewage
         public static void main (String[] args)
         {
             Scanner sc =new Scanner(System.in);
+            System.out.println("\n\n              Implemented with class and methods for employee wage");
             System.out.println("\nenter the employee to check attendance and wage:");
             System.out.println("\n  Enter\n  1 for FullTime Employee\n  2 for PartTime Employee");
             int choice=sc.nextInt();
