@@ -7,7 +7,7 @@ class Employee
 
     int checkfullhours = (int) (Math.floor(Math.random() * 8 % 9) + 1);
     int checkparthours = (int) (Math.floor(Math.random() * 4 % 5) + 1);
-    public static int WAGE_PER_HOUR = 20,FULL_DAY_HOUR = 8,PART_TIME_HOUR=4;
+    public static int WAGE_PER_HOUR = 20,FULL_DAY_HOUR = 8,PART_TIME_HOUR=4,MONTHLY_FULLTIME_HOUR=100,MONTHLY_PARTTIME_HOUR=50;
     public static int check = (int) (Math.random() * 2);
 
     public void employeePresentorAbesnt()
@@ -39,6 +39,15 @@ class Employee
             System.out.println("\n  the employee's salary is 0, because employee is absent...");
 
     }
+
+    public void monthlywage(int hours)
+    {
+        System.out.println("\n\ncheck the employee monthly wage:");
+        int monthlysalary=hours*WAGE_PER_HOUR;
+        System.out.println("\n  Employee's monthly salary is "+monthlysalary);
+    }
+
+
 }
 
 class Fulltimeemployee extends Employee
@@ -49,6 +58,7 @@ class Fulltimeemployee extends Employee
         System.out.println("\n\n   For Fulltime Employee");
         this.employeePresentorAbesnt();
         this.dailyemployeewage(checkfullhours,FULL_DAY_HOUR);
+        this.monthlywage(MONTHLY_FULLTIME_HOUR);
     }
 
 }
@@ -61,6 +71,7 @@ class Parttimeemployee extends Employee
         System.out.println("\n\n   For Parttime Employee");
         this.employeePresentorAbesnt();
         this.dailyemployeewage(checkparthours,PART_TIME_HOUR);
+        this.monthlywage(MONTHLY_PARTTIME_HOUR);
     }
 
 }
