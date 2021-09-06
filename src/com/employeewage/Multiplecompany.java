@@ -1,44 +1,94 @@
 package com.employeewage;
 
 public class Multiplecompany {
-    private int wage;
+    private String companyname;
+    private int wageperhour;
     private int noofworkingdays;
     private int workinghourspermonth;
+    private int fulltotalwage;
+    private int parttotalwage;
 
-    Multiplecompany(int wage,int noofworkingdays,int workinghourspermonth)
+    Multiplecompany(String companyname, int wageperhour, int noofworkingdays, int workinghourspermonth)
     {
-        this.wage=wage;
+        this.companyname=companyname;
+        this.wageperhour = wageperhour;
         this.noofworkingdays=noofworkingdays;
         this.workinghourspermonth=workinghourspermonth;
+
     }
 
-    public int getWage(int wage)
+    public String getCompanyname()
     {
-        return wage;
+        return companyname;
     }
 
-    public void setWage()
+    public void setCompanyname(String companyname)
     {
-        this.wage=wage;
+        this.companyname=companyname;
     }
 
-    public int getNoofworkingdays(int noofworkingdays)
+    public int getWageperhour()
+    {
+        return wageperhour;
+    }
+
+    public void setWageperhour(int wageperhour)
+    {
+        this.wageperhour = wageperhour;
+    }
+
+    public int getNoofworkingdays()
     {
         return noofworkingdays;
     }
 
-    public void setNoofworkingdays()
+    public void setNoofworkingdays(int noofworkingdays)
     {
         this.noofworkingdays=noofworkingdays;
     }
 
-    public int getWorkinghourspermonth(int workinghourspermonth)
+    public int getWorkinghourspermonth()
     {
-        return noofworkingdays;
+        return workinghourspermonth;
     }
 
-    public void setWorkinghourspermonth()
+    public void setWorkinghourspermonth(int workinghourspermonth)
     {
         this.workinghourspermonth=workinghourspermonth;
+    }
+
+    public int getFulltotalwage()
+    {
+        return fulltotalwage;
+    }
+
+    public void setFulltotalwage(int totalfullWage)
+    {
+        this.fulltotalwage=fulltotalwage;
+    }
+
+    public int getParttotalwage()
+    {
+        return parttotalwage;
+    }
+
+    public void setParttotalwage(int parttotalwage)
+    {
+        this.parttotalwage=parttotalwage;
+    }
+
+
+
+
+    public String toString()
+    {
+        return "Multiplecompany{" +
+                " companyname = '"+companyname+
+                ",wageperhour = "+wageperhour+
+                ", noofworkingdays = "+noofworkingdays+
+                ", workinghourspermonth = "+workinghourspermonth+
+                ", totalwageoffulltimeemployee ="+fulltotalwage+
+                ", totalwageofpartimeemployee = " +parttotalwage+
+                '}';
     }
 }
